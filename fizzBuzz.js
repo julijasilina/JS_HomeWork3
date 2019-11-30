@@ -71,4 +71,4 @@ function onClick() {
 }
 
 //Jaizveido mains, ja būs nepieciešams izsaukt vairākas funkcijas.Jābūt vienām funkcijas izsaukumu
-// onClick();
+onClick();
