@@ -10,11 +10,6 @@ const cont = document.getElementById("container");
 
 
 function createDivs() {
-    // minVal.value = 1;
-    // maxVal.value = 100;
-    // fizzValue.value = 3;
-    // buzzValue.value = 5;
-
 
     for (let i = 1; i <= 101; i++) {
         const elem = document.createElement('div');
@@ -49,7 +44,6 @@ function createDivs() {
 btnClear.addEventListener('click', () => { console.log("Clicked Clear"); });
 btnClear.onclick = (event) => {
     console.log("I want to delet all Divs");
-    // const cont = document.getElementById("container");
     while (cont.firstChild) {
         cont.removeChild(cont.firstChild);
     }
