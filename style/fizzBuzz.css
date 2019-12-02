@@ -102,10 +102,6 @@ main {
   }
 
 
-
-
-
-
 @media screen and (max-width: 992px) {
     #container {
     grid-template-columns: repeat(5, 1fr);
