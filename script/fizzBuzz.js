@@ -4,19 +4,19 @@ const fizzVal = document.getElementById("fizzval");
 const buzzVal = document.getElementById("buzzval");
 const btnClear = document.getElementById("ClearAll");
 const btnReset = document.getElementById("ResetAll");
+const minVal = document.getElementById("minval");
+const maxVal = document.getElementById("maxval");
+const cont = document.getElementById("container");
+
 
 function createDivs() {
-    const minVal = document.getElementById("minval");
-    const maxVal = document.getElementById("maxval");
-    const cont = document.getElementById("container");
-
-    minVal.value = 1;
-    maxVal.value = 100;
-    fizzValue.value = 3;
-    buzzValue.value = 5;
+    // minVal.value = 1;
+    // maxVal.value = 100;
+    // fizzValue.value = 3;
+    // buzzValue.value = 5;
 
 
-    for (let i = 1; i < 101; i++) {
+    for (let i = 1; i <= 101; i++) {
         const elem = document.createElement('div');
         elem.id = "myid" + 1;
         cont.appendChild(elem);
@@ -42,21 +42,42 @@ function createDivs() {
             elem.classList.add("NoFizzBuzz");
         }
     }
-
 }
+
+
 
 btnClear.addEventListener('click', () => { console.log("Clicked Clear"); });
 btnClear.onclick = (event) => {
     console.log("I want to delet all Divs");
-    const cont = document.getElementById("container");
+    // const cont = document.getElementById("container");
     while (cont.firstChild) {
         cont.removeChild(cont.firstChild);
     }
 }
 
+minVal.onchange = () => {
+    console.log("Refreshing from Min");
+    while (cont.firstChild) {
+        cont.removeChild(cont.firstChild);
+    }
+    createDivs();
+}
+
+maxVal.onchange = () => {
+    console.log("Refreshing from Max");
+    while (cont.firstChild) {
+        cont.removeChild(cont.firstChild);
+    }
+    createDivs();
+}
+
 btnReset.addEventListener('click', () => { console.log("Clicked Reset"); });
 btnReset.onclick = (event) => {
     console.log("I want to reset all Divs");
+    createDivs();
+    while (cont.firstChild) {
+        cont.removeChild(cont.firstChild);
+    }
     createDivs();
 }
 
